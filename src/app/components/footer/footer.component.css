@@ -1,0 +1,9 @@
+footer {
+  background-color: #ffc700;
+  padding: 1rem;
+}
+
+footer > p {
+  text-align: center;
+  font-weight: 700;
+}
