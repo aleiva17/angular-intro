@@ -1,0 +1,21 @@
+<main class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-1/2 md:w-3/4 lg:w-1/2 p-8">
+  <div
+    *ngFor="let student of students" 
+    class="flex flex-col items-center bg-white shadow-xl rounded-3xl p-6"
+  >
+    <img 
+      [src]="student.imgSrc" 
+      alt="{{ student.name }} profile photo"
+      class="h-48 w-48 rounded-full my-4"
+    >
+    <p
+      class="font-semibold border-2 rounded-full px-2 py-1"
+      [ngClass]="student.online ? 'text-green-600 border-green-600' : 'text-red-600 border-red-600'"
+    >
+      {{ (student.online ? "online" : "offline") | uppercase }}
+    </p>
+    <p class="font-medium my-2">{{ student.name }}</p>
+    <p class="text-sm text-center mb-2">{{ student.description }}</p>
+    <p class="font-semibold">Courses taken: {{ student.coursesTaken }}</p>
+  </div>
+</main>
