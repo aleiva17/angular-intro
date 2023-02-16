@@ -1,0 +1,16 @@
+<div class="grid grid-row-[auto_auto_1fr] justify-items-center h-full bg-white shadow-md rounded-xl gap-4 p-8">
+  <div class="w-full">
+    <p class="text-xl text-center font-bold mb-4">{{ product.title }}</p>
+    <hr>
+  </div>
+  <img 
+    class="h-48 w-auto"
+    [src]="product.image" 
+    [alt]="product.title + 'photo'"
+  >
+  <div class="flex flex-col justify-center items-center gap-2">
+    <p class="text-lg bg-green-500 text-white font-semibold rounded-md w-fit px-2 py-1">{{ product.price | toPrice }}</p>
+    <p class="text-slate-600">Category: {{ product.category }}</p>
+    <p class="text-slate-600">Rating: {{ product.rating | toRating }}</p>
+  </div>
+</div>

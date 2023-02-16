@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { LoginFormComponent } from './components/login-form/login-form.component';
+import { ListProductsModule } from './list-products/list-products.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    LoginFormComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ListProductsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

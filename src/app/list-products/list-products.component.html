@@ -1,0 +1,21 @@
+<div *ngIf="allLoaded; else loader">
+  <app-search-bar (onNewFilter)="setFilter($event)"></app-search-bar>
+  <button 
+    class="bg-slate-800 text-white rounded-lg px-3 py-1.5"
+    (click)="addMockProduct()"
+    >Add mock product
+  </button>
+  <section 
+    class="grid grid-cols-5 gap-4 p-4"
+    *ngIf="product$ | async as products"
+  >
+    <app-product-card 
+      *ngFor="let product of (products | filterProducts: filter)" 
+      [product]="product"
+    >
+    </app-product-card>
+  </section>
+</div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
